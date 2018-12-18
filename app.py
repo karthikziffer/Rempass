@@ -2,10 +2,10 @@
 from colour import Color
 from flask import Flask , request , jsonify , Response
 from flask_api import FlaskAPI, status, exceptions
-from flask_cors import CORS
+# from flask_cors import CORS
 
 app = FlaskAPI(__name__)
-CORS(app)
+# CORS(app)
 
 """
 #FF0000 Red
@@ -94,7 +94,7 @@ class createPassword:
 
 # @app.route('/pass' , methods = ['POST'])
 @app.route('/' )
-def rempass():
+def index():
 
 	return "OK"
 	# try:
