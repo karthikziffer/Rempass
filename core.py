@@ -92,33 +92,35 @@ class createPassword:
 			
 
 
-@app.route('/pass' , methods = ['POST'])
+# @app.route('/pass' , methods = ['POST'])
+@app.route('/' )
 def rempass():
 
-	try:
-		sentence = request.get_json()['sentence'] 
-		color = request.get_json()['color']
-	except Exception as e:
-		status = 400
-		message = "Client side Error"
-		password = None
-		jsonOut = jsonify(status = status , message = message , password = password)
-		return jsonOut
+	return "OK"
+	# try:
+	# 	sentence = request.get_json()['sentence'] 
+	# 	color = request.get_json()['color']
+	# except Exception as e:
+	# 	status = 400
+	# 	message = "Client side Error"
+	# 	password = None
+	# 	jsonOut = jsonify(status = status , message = message , password = password)
+	# 	return jsonOut
 
-	try:
-		create_pass = createPassword(sentence = sentence, color = color)
-		password = create_pass.PasswordAndmetaData()
-		password["sentence"] = sentence
-		password["color"] = color
-		status = 200
-		message = "Success"
-	except Exception as e:
-		status = 500
-		message = "Server side Error"
-		password = None
+	# try:
+	# 	create_pass = createPassword(sentence = sentence, color = color)
+	# 	password = create_pass.PasswordAndmetaData()
+	# 	password["sentence"] = sentence
+	# 	password["color"] = color
+	# 	status = 200
+	# 	message = "Success"
+	# except Exception as e:
+	# 	status = 500
+	# 	message = "Server side Error"
+	# 	password = None
 
-	jsonOut = jsonify(status = status , message = message , password = password)
-	return jsonOut
+	# jsonOut = jsonify(status = status , message = message , password = password)
+	# return jsonOut
 
 
 
