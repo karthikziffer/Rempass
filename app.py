@@ -1,5 +1,5 @@
 #pip install colour
-from colour import Color
+# from colour import Color
 from flask import Flask , request , jsonify , Response
 from flask_api import FlaskAPI, status, exceptions
 # from flask_cors import CORS
