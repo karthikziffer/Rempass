@@ -1,11 +1,11 @@
 #pip install colour
-# from colour import Color
+from colour import Color
 from flask import Flask , request , jsonify , Response
 from flask_api import FlaskAPI, status, exceptions
-# from flask_cors import CORS
+from flask_cors import CORS
 
 app = FlaskAPI(__name__)
-# CORS(app)
+CORS(app)
 
 """
 #FF0000 Red
@@ -92,35 +92,35 @@ class createPassword:
 			
 
 
-# @app.route('/pass' , methods = ['POST'])
-@app.route('/' )
-def index():
 
-	return "OK"
-	# try:
-	# 	sentence = request.get_json()['sentence'] 
-	# 	color = request.get_json()['color']
-	# except Exception as e:
-	# 	status = 400
-	# 	message = "Client side Error"
-	# 	password = None
-	# 	jsonOut = jsonify(status = status , message = message , password = password)
-	# 	return jsonOut
+@app.route('/pass' , methods = ['POST']  )
+def rempas():
 
-	# try:
-	# 	create_pass = createPassword(sentence = sentence, color = color)
-	# 	password = create_pass.PasswordAndmetaData()
-	# 	password["sentence"] = sentence
-	# 	password["color"] = color
-	# 	status = 200
-	# 	message = "Success"
-	# except Exception as e:
-	# 	status = 500
-	# 	message = "Server side Error"
-	# 	password = None
 
-	# jsonOut = jsonify(status = status , message = message , password = password)
-	# return jsonOut
+	try:
+		sentence = request.get_json()['sentence'] 
+		color = request.get_json()['color']
+	except Exception as e:
+		status = 400
+		message = "Client side Error"
+		password = None
+		jsonOut = jsonify(status = status , message = message , password = password)
+		return jsonOut
+
+	try:
+		create_pass = createPassword(sentence = sentence, color = color)
+		password = create_pass.PasswordAndmetaData()
+		password["sentence"] = sentence
+		password["color"] = color
+		status = 200
+		message = "Success"
+	except Exception as e:
+		status = 500
+		message = "Server side Error"
+		password = None
+
+	jsonOut = jsonify(status = status , message = message , password = password)
+	return jsonOut
 
 
 
