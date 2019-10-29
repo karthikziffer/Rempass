@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  	<link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">
+
+
+    <style>
+
+    h1{
+    	padding-top: 60px;
+    	font-weight: 700;
+    	font-size: 200px;
+    	font-family: 'Sacramento', cursive;
+    	text-shadow: 4px 4px 4px #aaa;
+    }
+
+	body, html {
+	  height: 100%;
+	  margin: 0;
+	}
+
+	.bg {
+	  /* The image used */
+	  background-image: url("img.jpg");
+
+	  /* Full height */
+	  height: 100%; 
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	label, input {
+	    display: block;
+	}
+
+	label {
+	    margin-bottom: 20px;
+	}
+
+	.bottom-three {
+		padding-bottom: 7%;
+  	}
+
+	</style>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <div class = "bg">
+    	<div align="center">
+    		<h1 class="bottom-three">RemPass</h1>
+		    <form>
+			  	<div class="form-signin col-lg-4">
+			  		<label>	
+				    		<input type="text" class=" form-control" id="sentence" aria-describedby="emailHelp" placeholder="Enter Sentence">
+					</label>
+				</div>
+				<div class="form-signin col-lg-4"> 
+					<label>
+				    	<input type="text" class="form-control" id="color" aria-describedby="emailHelp" placeholder="Enter Color">
+					</label>
+				</div>
+
+				<button type="button"  class="btn btn-warning" onclick="loadDoc()">Go</button>
+				<p id="demo"></p>
+			</form>	
+		</div>	
+	</div>
+
+    <!-- loadDoc Function -->
+    <script>
+
+	loadDoc = () => {
+			var sentence = document.getElementById("sentence").value;
+			var color = document.getElementById("color").value;
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() 
+			{
+			if (this.readyState == 4 && this.status == 200) 
+			{	
+			// document.getElementById("demo").innerHTML = 
+			var response = JSON.parse(this.responseText).password.generated_password;
+			Swal.fire("Your Password is" , response);
+			}
+			};
+			xhttp.open("POST", "https://rempas-flask.herokuapp.com/pass", true);
+			xhttp.setRequestHeader("Content-type", "application/json");		
+			xhttp.send(JSON.stringify({"sentence":sentence , "color":color}));
+	}
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
