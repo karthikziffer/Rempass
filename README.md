@@ -82,7 +82,7 @@ The average response time is 400ms.
 ### Motivation
 
 
-I was wondering how we could generate a password which doesnot comprimize with authenticity and paralley be simple to remember, then I came up with simple string concatenation solution. This project fueled my interest towards a stronger authentication practices. This could be further accelerated by employing Neural Networks. If anyone come across or have used any password generating dataset, please feel free to contact me or contribute to this project by sharing it. 
+I was wondering how we could generate a password which doesnot comprimize with authenticity and paralley be simple to remember, then I came up with simple string concatenation solution. This project fueled my interest towards a stronger authentication practices. This could be further accelerated by employing LSTM Neural Networks. If anyone come across or have used any password generating dataset, please feel free to contact me or contribute to this project by sharing it. 
 
 
 Thank you :)
