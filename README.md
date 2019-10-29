@@ -7,6 +7,51 @@ In the future release, deep learning based sequence networks can be employed to 
 
 
 
+### Password API
+
+
+The backend is built using Python Flask Framework and currently hosted in heroku. Your are free to use the API by following below POST request. 
+
+
+
+#### Endpoint
+```
+https://rempas-flask.herokuapp.com/pass
+```
+
+
+#### Body
+```
+{
+	"sentence":"i am a hero" ,
+	"color":"blue"
+}
+```
+
+#### Response
+```
+{
+    "message": "Success",
+    "password": {
+        "color": "blue",
+        "color_code": "#0000ff",
+        "generated_password": "#0000ffIaah#0000ff",
+        "password_length": 18,
+        "password_pattern": [
+            "#0000ff",
+            "Iaah",
+            "#0000ff"
+        ],
+        "sentence": "i am a hero",
+        "trimmed_sentence": "Iaah"
+    },
+    "status": 200
+}
+```
+
+
+The average response time is 400ms.
+
 <br>
 
 ### Webpage 
@@ -19,3 +64,10 @@ In the future release, deep learning based sequence networks can be employed to 
 
 
 ![Screenshot-from-2019-10-29-11-50-47.png](https://i.postimg.cc/gcyH0Rw7/Screenshot-from-2019-10-29-11-50-47.png)
+
+
+
+
+
+
+
