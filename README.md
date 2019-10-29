@@ -7,7 +7,7 @@ In the future release, deep learning based sequence networks can be employed to 
 
 
 
-### Password API
+### Python API
 
 
 The backend is built using Python Flask Framework and currently hosted in heroku. Your are free to use the API by following below POST request. 
