@@ -11,11 +11,11 @@ In the future release, deep learning based sequence networks can be employed to 
 
 ### Webpage 
 
-![Screenshot-from-2019-10-29-11-49-57.png](https://i.postimg.cc/kMHhxWMg/Screenshot-from-2019-10-29-11-49-57.png)] 
+![Screenshot-from-2019-10-29-11-49-57.png](https://i.postimg.cc/kMHhxWMg/Screenshot-from-2019-10-29-11-49-57.png)
 
 
 
 <br>
 
 
-![Screenshot-from-2019-10-29-11-50-47.png](https://i.postimg.cc/gcyH0Rw7/Screenshot-from-2019-10-29-11-50-47.png)]
+![Screenshot-from-2019-10-29-11-50-47.png](https://i.postimg.cc/gcyH0Rw7/Screenshot-from-2019-10-29-11-50-47.png)
